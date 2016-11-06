@@ -1,0 +1,29 @@
+﻿
+
+@model List<Vidly_one.Models.Customer>
+<table class="table table-borded table-hover">
+    <thead>
+    <tr>
+        <th>Customer</th>
+        <th>Membership</th>
+    </tr>
+
+    </thead>
+    <tbody>
+       
+       
+            @foreach (var customer in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)
+                    </td>
+                    <td>
+                        @customer.MemberShipType.Name
+                    </td>
+                </tr>
+            }
+      
+    </tbody>
+</table>

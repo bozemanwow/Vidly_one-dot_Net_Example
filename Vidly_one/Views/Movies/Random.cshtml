@@ -1,0 +1,20 @@
+﻿@model Vidly_one.ViewModels.RandomMovieViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+var classname = Model.Customers.Count > 5 ? "popular" : null;
+}
+<h2 class="@classname">@Model.Movie.Name</h2>
+<body>
+    @if(Model.Customers.Count < 1)
+    {
+        <text>Not yet Rented.</text>
+    }
+    else
+    {
+       @Html.Partial("_DisplayListofCustomers", Model.Customers)
+    }
+</body>

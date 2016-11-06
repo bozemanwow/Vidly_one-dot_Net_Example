@@ -1,0 +1,23 @@
+﻿
+@using Microsoft.Ajax.Utilities
+@model Vidly_one.Models.Customer
+
+@{
+    ViewBag.Title = "DetailsName";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+<ul>
+    @if (!Model.BirthDay.IsNullOrWhiteSpace())
+    {
+        <li>
+            @Model.BirthDay;
+        </li>
+    }
+    <li>
+        @Model.MemberShipType.Name
+    </li>
+
+
+</ul>

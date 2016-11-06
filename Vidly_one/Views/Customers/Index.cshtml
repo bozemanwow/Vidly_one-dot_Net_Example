@@ -1,0 +1,16 @@
+﻿@using Vidly_one.Models
+@model Vidly_one.ViewModels.CustomerIndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Model.Customers.Capacity > 0)
+{
+   
+    @Html.Partial("_DisplayListofCustomers", Model.Customers)
+
+}
+else
+{
+   <h1>There are no customers</h1>
+}
